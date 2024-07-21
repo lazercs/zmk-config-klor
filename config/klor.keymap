@@ -71,7 +71,7 @@
        &kp Q  &kp W           &kp F           &kp P            &kp B                                        &kp J      &kp L        &kp U           &kp Y            &kp APOS
 &none  &kp A  &hm LEFT_ALT R  &hm LEFT_GUI S  &hm LSHFT T      &kp G                                        &kp M      &hm RSHFT N  &hm LEFT_GUI E  &hm RIGHT_ALT I  &kp O     &none
 &none  &kp Z  &kp X           &kp C           &kp D            &kp V        &trans       &trans             &kp K      &kp H        &kp COMMA       &kp DOT          &kp FSLH  &none
-                              &lt 0 DEL       &lt 2 BACKSPACE  &lt 4 ENTER  &kp LG(TAB)  &kp RIGHT_CONTROL  &lt 1 TAB  &lt 4 SPACE  &lt 0 ESCAPE
+                              &lt 6 DEL       &lt 4 BACKSPACE  &lt 5 ENTER  &kp LG(TAB)  &kp RIGHT_CONTROL  &lt 3 TAB  &lt 2 SPACE  &lt 0 ESCAPE
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -165,9 +165,9 @@
         fun_layer {
             label = "FUN";
             bindings = <
-       &soft_off  &sys_reset  &tog 1    &to 0      &none                      &kp PRINTSCREEN  &kp N7     &kp N8   &kp N9  &kp RBKT
-&none  &none      &kp LALT    &kp LGUI  &kp LSHFT  &none                      &kp SCROLLLOCK   &kp N4     &kp N5   &kp N6  &kp EQUAL  &none
-&none  &none      &none       &none     &none      &none  &none        &none  &kp PAUSE_BREAK  &kp N1     &kp N2   &kp N3  &kp BSLH   &none
+       &soft_off  &sys_reset  &tog 1    &to 0      &none                      &kp PRINTSCREEN  &kp F7     &kp F8   &kp F9  &kp F12
+&none  &none      &kp LALT    &kp LGUI  &kp LSHFT  &none                      &kp SCROLLLOCK   &kp F4     &kp F5   &kp F6  &kp F11  &none
+&none  &none      &none       &none     &none      &none  &none        &none  &kp PAUSE_BREAK  &kp F1     &kp F2   &kp F3  &kp F10  &none
                               &none     &none      &none  &bootloader  &none  &kp TAB          &kp SPACE  &kp ESC
             >;
 
