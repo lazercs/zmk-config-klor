@@ -1,4 +1,3 @@
-
 //                               █         █    █            ▄▄▄▀▀▀▀▀▀▄▄▄        █▀▀▀▀▀▀▀▀▀▀█
 //                               █        █     █          ▄▀            ▀▄      █          █
 //                               █       █      █        ▄▀                ▀▄    █          █
@@ -12,20 +11,17 @@
 //                               █         █    █▄▄▄▄▄▄▄▄    ▀▀▀▄▄▄▄▄▄▀▀▀        █          █
 //
 // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-       
-#include <behaviors.dtsi>
-#include <dt-bindings/zmk/keys.h>
-#include <dt-bindings/zmk/bt.h>
-#include <dt-bindings/zmk/outputs.h>
-#include <dt-bindings/zmk/ext_power.h>
-#include <dt-bindings/zmk/rgb.h>
 
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/ext_power.h>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/outputs.h>
 
 #define BASE   0
 #define LOWER  1
 #define RAISE  2
 #define ADJUST 3
-
 
 / {
     behaviors {
@@ -38,30 +34,30 @@
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
         };
-
     };
 
-     combos {
-            compatible = "zmk,combos";
-            combo_esc {
-                timeout-ms = <50>;
-                key-positions = <0 1>;
-                bindings = <&kp ESC>;
-            };
+    combos {
+        compatible = "zmk,combos";
+
+        combo_esc {
+            timeout-ms = <50>;
+            key-positions = <0 1>;
+            bindings = <&kp ESC>;
+        };
     };
 
+    keymap {
+        compatible = "zmk,keymap";
 
+        // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
 
-        keymap {
-                compatible = "zmk,keymap";
-// ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+        base_layer {
+            // ┌───────────────────────────────────────────────────────────┐
 
+            label = "BASE";
 
-                base_layer {
-// ┌───────────────────────────────────────────────────────────┐
-label= "BASE"                                                  ;
-// └───────────────────────────────────────────────────────────┘
-/*           ┌─────────┬─────────┬─────────┬─────────┬─────────┐                    ┌─────────┬─────────┬─────────┬─────────┬─────────┐
+            // └───────────────────────────────────────────────────────────┘
+            /*           ┌─────────┬─────────┬─────────┬─────────┬─────────┐                    ┌─────────┬─────────┬─────────┬─────────┬─────────┐
              │    Q    │    W    │    F    │    P    │    G    │                    │    J    │    L    │    U    │    Y    │    ;    │   
    ┌─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤                    ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┐
    │   TAB   │    A    │    R    │    S    │    T    │    D    │                    │    H    │    N    │    E    │    I    │    O    │    "    │
@@ -69,25 +65,34 @@ label= "BASE"                                                  ;
    │   DEL   │    Z    │    X    │    C    │    V    │    B    ││  MUTE  ││PLY/PSE ││    K    │    M    │    ,    │    .    │    /    │    \    │
    └─────────┴─────────┴─────────┼─────────┼─────────┼─────────┼╰────────╯╰────────╯┼─────────┼─────────┼─────────┼─────────┴─────────┴─────────┘
                                  │  CTRL   │  LOWER  │  SPACE  │   ALT   ││ CMD/WIN │  ENTER  │  RAISE  │  BSPCE  │  
-                                 └─────────┴─────────┴─────────┴─────────┘└─────────┴─────────┴─────────┴─────────┘ */ 
- bindings = <
- //╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷
-              &kp Q     &kp W     &kp F     &kp P     &kp G                          &kp J     &kp L     &kp U     &kp Y     &kp SEMI
-    &kp TAB   &kp A     &kp R     &kp S   &hm LSHFT T &kp D                          &kp H   &hm RSHFT N &kp E     &kp I     &kp O     &kp SQT
-    &kp DEL   &kp Z     &kp X     &kp C     &kp V     &kp B     &trans     &trans    &kp K     &kp M     &kp COMMA &kp DOT   &kp FSLH  &kp BSLH
-                                  &kp LCTRL &mo LOWER &kp SPACE &kp LALT   &kp LGUI  &kp RET   &mo RAISE &kp BSPC    
-                        >;
+                                 └─────────┴─────────┴─────────┴─────────┘└─────────┴─────────┴─────────┴─────────┘ */
+
+            bindings = <
+       &kp Q  &kp W           &kp F           &kp P            &kp B                                        &kp J      &kp L        &kp U           &kp Y            &kp APOS
+&none  &kp A  &hm LEFT_ALT R  &hm LEFT_GUI S  &hm LSHFT T      &kp G                                        &kp M      &hm RSHFT N  &hm LEFT_GUI E  &hm RIGHT_ALT I  &kp O     &none
+&none  &kp Z  &kp X           &kp C           &kp D            &kp V        &trans       &trans             &kp K      &kp H        &kp COMMA       &kp DOT          &kp FSLH  &none
+                              &lt 0 DEL       &lt 2 BACKSPACE  &lt 4 ENTER  &kp LG(TAB)  &kp RIGHT_CONTROL  &lt 1 TAB  &lt 4 SPACE  &lt 0 ESCAPE
+            >;
+
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
-                };
+        };
 
-// ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+        QWERTY {
+            bindings = <
+        &kp Q  &kp W       &kp E       &kp R        &kp T                   &kp Y   &kp U        &kp I            &kp O       &kp P
+&trans  &kp A  &hm LALT S  &hm LGUI D  &hm LSHFT F  &kp G                   &kp H   &hm RSHFT J  &hm RIGHT_GUI K  &hm RALT L  &kp SEMI  &trans
+&trans  &kp Z  &kp X       &kp C       &kp V        &kp B   &trans  &trans  &kp N   &kp M        &kp COMMA        &kp DOT     &kp FSLH  &trans
+                           &trans      &trans       &trans  &trans  &trans  &trans  &trans       &trans
+            >;
+        };
 
+        nav_layer {
+            // ┌───────────────────────────────────────────────────────────┐
 
-                lower_layer {
-// ┌───────────────────────────────────────────────────────────┐
-label= "LOWER"                                                 ;
-// └───────────────────────────────────────────────────────────┘
-/*           ┌─────────┬─────────┬─────────┬─────────┬─────────┐                    ┌─────────┬─────────┬─────────┬─────────┬─────────┐
+            label = "NAV";
+
+            // └───────────────────────────────────────────────────────────┘
+            /*           ┌─────────┬─────────┬─────────┬─────────┬─────────┐                    ┌─────────┬─────────┬─────────┬─────────┬─────────┐
              │         │         │    UP   │         │    {    │                    │    }    │    7    │    8    │    9    │    +    │
    ┌─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤                    ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┐
    │         │         │   LEFT  │  DOWN   │  RIGHT  │    [    │                    │    ]    │    4    │    5    │    6    │    -    │         │
@@ -95,25 +100,37 @@ label= "LOWER"                                                 ;
    │         │         │   P UP  │ C LOCK  │ P DOWN  │    (    ││        ││        ││    )    │    1    │    2    │    3    │    *    │         │
    └─────────┴─────────┴─────────┼─────────┼─────────┼─────────┼╰────────╯╰────────╯┼─────────┼─────────┼─────────┼─────────┴─────────┴─────────┘
                                  │         │         │         │         ││         │         │    0    │         │  
-                                 └─────────┴─────────┴─────────┴─────────┘└─────────┴─────────┴─────────┴─────────┘ */ 
- bindings = <
- //╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷
-    &ext_power EP_TOG   &trans    &kp UP    &trans    &kp LBRC                       &kp RBRC  &kp KP_N7 &kp KP_N8 &kp KP_N9 &kp KP_PLUS
-    &trans  &rgb_ug RGB_EFF    &kp LEFT  &kp DOWN  &kp RIGHT &kp LBKT                       &kp RBKT  &kp KP_N4 &kp KP_N5 &kp KP_N6 &kp KP_MINUS &trans
-    &trans    &trans    &kp PG_UP &kp CAPS  &kp PG_DN &kp LPAR  &trans     &trans    &kp RPAR  &kp KP_N1 &kp KP_N2 &kp KP_N3 &kp KP_MULTIPLY &trans
-                                  &trans    &trans    &trans    &trans     &trans    &kp DELETE &kp KP_N0 &trans  
-                        >;
+                                 └─────────┴─────────┴─────────┴─────────┘└─────────┴─────────┴─────────┴─────────┘ */
+
+            bindings = <
+       &kp INS    &kp HOME   &kp UP     &kp END    &kp PG_UP                       &none  &to 0      &tog 1    &sys_reset  &soft_off
+&none  &kp CAPS   &kp LEFT   &kp DOWN   &kp RIGHT  &kp PG_DN                       &none  &kp RSHFT  &kp RGUI  &kp RALT    &none      &none
+&none  &kp LG(Z)  &kp LG(X)  &kp LG(C)  &kp LG(V)  &kp LG(Y)  &trans  &none        &none  &none      &none     &none       &none      &none
+                             &kp DEL    &kp BSPC   &kp ENTER  &trans  &bootloader  &none  &none      &none
+            >;
+
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
-                };
+        };
 
-// ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+        media_layer {
+            label = "MEDIA";
+            bindings = <
+       &bt BT_SEL 4    &bt BT_SEL 3       &bt BT_SEL 2  &bt BT_SEL 1  &bt BT_SEL 0                            &none  &to 0      &tog 1    &sys_reset  &soft_off
+&none  &kp C_PREVIOUS  &kp C_VOLUME_DOWN  &kp C_VOL_UP  &kp C_NEXT    &ext_power EP_TOG                       &none  &kp RSHFT  &kp RGUI  &kp RALT    &none      &none
+&none  &none           &none              &none         &bt BT_CLR    &out OUT_TOG       &trans  &none        &none  &none      &none     &none       &none      &none
+                                          &kp C_STOP    &kp C_PP      &kp C_MUTE         &trans  &bootloader  &none  &none      &none
+            >;
 
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+        };
 
-                raise_layer {
-// ┌───────────────────────────────────────────────────────────┐
-label= "RAISE"                                                 ;
-// └───────────────────────────────────────────────────────────┘
-/*           ┌─────────┬─────────┬─────────┬─────────┬─────────┐                    ┌─────────┬─────────┬─────────┬─────────┬─────────┐
+        number_layer {
+            // ┌───────────────────────────────────────────────────────────┐
+
+            label = "NUMBER";
+
+            // └───────────────────────────────────────────────────────────┘
+            /*           ┌─────────┬─────────┬─────────┬─────────┬─────────┐                    ┌─────────┬─────────┬─────────┬─────────┬─────────┐
              │         │         │         │         │         │                    │         │         │    Ü    │         │         │
    ┌─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤                    ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┐
    │    Ä    │         │    ß    │         │         │         │                    │         │         │         │         │    Ö    │         │
@@ -121,41 +138,40 @@ label= "RAISE"                                                 ;
    │         │         │         │         │         │         ││        ││        ││         │         │         │         │         │         │
    └─────────┴─────────┴─────────┼─────────┼─────────┼─────────┼╰────────╯╰────────╯┼─────────┼─────────┼─────────┼─────────┴─────────┴─────────┘
                                  │ ADJUST  │         │         │         ││         │         │         │         │  
-                                 └─────────┴─────────┴─────────┴─────────┘└─────────┴─────────┴─────────┴─────────┘ */ 
- bindings = <
- //╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷
-              &trans    &trans    &trans    &trans    &trans                         &trans    &trans    &kp RA(U) &trans    &trans     
-    &kp RA(A) &trans    &kp RA(S) &trans    &trans    &trans                         &trans    &trans    &trans    &trans    &kp RA(O) &trans  
-    &trans    &trans    &trans    &trans    &trans    &trans    &trans     &trans    &trans    &trans    &trans    &trans    &trans    &trans
-                                  &mo ADJUST &trans   &trans    &trans     &trans    &trans    &trans    &trans  
-                        >;
-                sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
-                };
+                                 └─────────┴─────────┴─────────┴─────────┘└─────────┴─────────┴─────────┴─────────┘ */
 
-// ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+            bindings = <
+       &soft_off  &sys_reset  &tog 1    &to 0      &none                      &kp LBKT   &kp N7  &kp N8   &kp N9  &kp RBKT
+&none  &none      &kp LALT    &kp LGUI  &kp LSHFT  &none                      &kp SEMI   &kp N4  &kp N5   &kp N6  &kp EQUAL  &none
+&none  &none      &none       &none     &none      &none  &none        &none  &kp GRAVE  &kp N1  &kp N2   &kp N3  &kp BSLH   &none
+                              &none     &none      &none  &bootloader  &none  &kp MINUS  &kp N0  &kp DOT
+            >;
 
-
-                adjust_layer {
-// ┌───────────────────────────────────────────────────────────┐
-label= "ADJUST"                                                ;
-// └───────────────────────────────────────────────────────────┘
-/*           ┌─────────┬─────────┬─────────┬─────────┬─────────┐                    ┌─────────┬─────────┬─────────┬─────────┬─────────┐
-             │         │         │         │         │         │                    │         │         │         │         │         │
-   ┌─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤                    ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┐
-   │         │         │         │         │         │         │                    │         │         │         │         │         │         │
-   ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤╭────────╮╭────────╮├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤
-   │         │         │         │         │         │         ││        ││        ││         │         │         │         │         │         │
-   └─────────┴─────────┴─────────┼─────────┼─────────┼─────────┼╰────────╯╰────────╯┼─────────┼─────────┼─────────┼─────────┴─────────┴─────────┘
-                                 │         │         │         │         ││         │         │         │         │  
-                                 └─────────┴─────────┴─────────┴─────────┘└─────────┴─────────┴─────────┴─────────┘ */ 
- bindings = <
- //╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷
-             &bt BT_CLR &trans    &trans    &trans    &trans                         &trans    &trans    &trans    &trans    &bt BT_CLR   
-    &trans   &bt BT_NXT &trans    &trans    &trans    &trans                         &trans    &trans    &trans    &bt BT_NXT &trans   &trans 
-    &trans   &bt BT_PRV &trans    &trans    &kp KP_N6 &trans    &trans     &trans    &bt BT_PRV &trans   &trans    &trans    &trans    &trans    
-                                  &trans    &trans    &trans    &trans     &trans    &trans    &trans    &trans    
-                        >;
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
-                };
         };
+
+        sym_layer {
+            label = "SYM";
+            bindings = <
+       &soft_off  &sys_reset  &tog 1    &to 0      &none                      &kp LEFT_BRACE  &kp AMPERSAND         &kp ASTERISK           &kp LEFT_PARENTHESIS  &kp RIGHT_BRACE
+&none  &none      &kp LALT    &kp LGUI  &kp LSHFT  &none                      &kp PLUS        &kp DOLLAR            &kp PERCENT            &kp CARET             &kp COLON        &none
+&none  &none      &none       &none     &none      &none  &none        &none  &kp PIPE        &kp EXCLAMATION       &kp AT                 &kp HASH              &kp TILDE        &none
+                              &none     &none      &none  &bootloader  &none  &kp UNDERSCORE  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS
+            >;
+
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+        };
+
+        fun_layer {
+            label = "FUN";
+            bindings = <
+       &soft_off  &sys_reset  &tog 1    &to 0      &none                      &kp PRINTSCREEN  &kp N7     &kp N8   &kp N9  &kp RBKT
+&none  &none      &kp LALT    &kp LGUI  &kp LSHFT  &none                      &kp SCROLLLOCK   &kp N4     &kp N5   &kp N6  &kp EQUAL  &none
+&none  &none      &none       &none     &none      &none  &none        &none  &kp PAUSE_BREAK  &kp N1     &kp N2   &kp N3  &kp BSLH   &none
+                              &none     &none      &none  &bootloader  &none  &kp TAB          &kp SPACE  &kp ESC
+            >;
+
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+        };
+    };
 };
