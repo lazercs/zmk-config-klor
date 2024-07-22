@@ -23,13 +23,19 @@
 #define RAISE  2
 #define ADJUST 3
 
+&mt {
+    tapping-term-ms = <400>;
+    quick-tap-ms = <100>;
+    flavor = "tap-preferred";
+};
+
 / {
     behaviors {
         hm: homerow_mods {
             compatible = "zmk,behavior-hold-tap";
             label = "HOMEROW_MODS";
             #binding-cells = <2>;
-            tapping-term-ms = <250>;
+            tapping-term-ms = <350>;
             quick_tap_ms = <0>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
@@ -69,7 +75,7 @@
 
             bindings = <
        &kp Q  &kp W           &kp F           &kp P            &kp B                                             &kp J      &kp L        &kp U           &kp Y            &kp APOS
-&none  &kp A  &hm LEFT_ALT R  &hm LEFT_GUI S  &hm LSHFT T      &kp G                                             &kp M      &hm RSHFT N  &hm LEFT_GUI E  &hm RIGHT_ALT I  &kp O     &none
+&none  &kp A  &hm LEFT_ALT R  &hm LEFT_GUI S  &hm LSHFT T      &kp G                                             &kp M      &hm RSHFT N  &hm LEFT_GUI E  &mt RIGHT_ALT I  &kp O     &none
 &none  &kp Z  &kp X           &kp C           &kp D            &kp V        &kp C_PLAY_PAUSE  &kp C_MUTE         &kp K      &kp H        &kp COMMA       &kp DOT          &kp FSLH  &none
                               &lt 6 DEL       &lt 4 BACKSPACE  &lt 5 ENTER  &kp LG(TAB)       &kp RIGHT_CONTROL  &lt 3 TAB  &lt 2 SPACE  &lt 0 ESCAPE
             >;
