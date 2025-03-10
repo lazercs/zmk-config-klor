@@ -84,6 +84,7 @@
         };
 
         COLEMAK {
+            label = "COLEMAK";
             bindings = <
        &kp Q  &kp W  &kp F   &kp P   &kp B                                 &kp J   &kp L   &kp U      &kp Y    &kp APOS
 &none  &kp A  &kp R  &kp S   &kp T   &kp G                                 &kp M   &kp N   &kp E      &kp I    &kp O     &none
@@ -95,7 +96,7 @@
         nav_layer {
             // ┌───────────────────────────────────────────────────────────┐
 
-            label = "NAV";
+            label = "LOWER";
 
             // └───────────────────────────────────────────────────────────┘
             /*           ┌─────────┬─────────┬─────────┬─────────┬─────────┐                    ┌─────────┬─────────┬─────────┬─────────┬─────────┐
@@ -117,7 +118,7 @@
         };
 
         output_layer {
-            label = "OUTPUT";
+            label = "RAISE";
             bindings = <
        &bt BT_SEL 4  &bt BT_SEL 3    &bt BT_SEL 2          &bt BT_SEL 1           &bt BT_SEL 0                       &kp LEFT_BRACE  &kp AMPERSAND    &kp ASTERISK  &kp LEFT_PARENTHESIS  &kp RIGHT_BRACE
 &none  &bt BT_CLR    &out OUT_BLE    &out OUT_USB          &ext_power EP_ON       &ext_power EP_OFF                  &kp PLUS        &kp DOLLAR       &kp PERCENT   &kp CARET             &kp COLON        &none
@@ -129,7 +130,7 @@
         number_layer {
             // ┌───────────────────────────────────────────────────────────┐
 
-            label = "NUMBER";
+            label = "ADJUST";
 
             // └───────────────────────────────────────────────────────────┘
             /*           ┌─────────┬─────────┬─────────┬─────────┬─────────┐                    ┌─────────┬─────────┬─────────┬─────────┬─────────┐
